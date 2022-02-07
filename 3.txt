@@ -1,0 +1,37 @@
+Resolver el siguiente ejercicio
+
+Usted ha sido contratado/a para desarrollar software en una empresa que se dedica a al corte de tableros de madera
+
+Es importante para la empresa para la optimización de material, determinar si las medidas proporcionadas por los clientes describen una recta.
+
+Para ello, se determina mediante un algoritmo la posición de los vertices de cada seccion de corte y se devuelve una matriz.
+
+Los elementos de la matriz siempre serán números entre 1 y 6.
+
+La matriz siempre tendrá una longitud de 5.
+
+Su algoritmo a partir de ésta matriz, debe identificar si se encuentra una recta de al menos 4 valores de los 5 que incluye la matriz.
+
+Se considera recta cuando los elementos no repetidos de la matriz y ordenados de forma ascendente, éstos son consecutivos en pasos de 1.
+
+EJEMPLO:
+
+Matriz: [2, 4, 3, 3, 1] // verdadero (1,2,3,4) RECTA ENCONTRADA
+RESPUESTA: {
+    recta_encontrada: 1
+}
+
+Matriz: [2, 5, 3, 3, 1] // falso (1,2,3,5) RECTA NO ENCONTRADA
+RESPUESTA: {
+    recta_encontrada: 0
+}
+
+- Deberá utilizar Ángular, presentando en un aplicativo SINGLE PAGE, el ingreso de los datos y la respuesta calculada 
+tras la ejecución de su algoritmo.
+- La respuesta deberá mostrarse en consola en JSON,
+- Puede utilizar el diseño de la interfaz que usted considere más apropiado.
+- se debe incluir en el repositorio una carpeta denominada files que contenga el proyecto compilado
+- se debe incluir una carpeta conf que contenda el archivo de configuración de nginx que levanta el sitio
+- se debe incluir un archivo docker-compose.yml fuera de la carpeta files, que inicialize un docker nginx que levante un contenedor 
+    para visualizar el proyecto funcionando en el puerto 8888 del host ligado al puerto 80 del contenedor.
+- Una vez concluido el ejercicio deberá subirlo al GIT compartido con usted, en la rama (su nombre en minusculas).
