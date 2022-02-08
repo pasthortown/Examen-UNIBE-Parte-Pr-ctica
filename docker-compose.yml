@@ -1,0 +1,43 @@
+version: '3.7'
+
+networks:
+  web_net:
+    ipam:
+      config:
+        - subnet: 172.52.0.0/24
+
+services:
+  balanceador:
+    image: nginx:latest
+    restart: always
+    ports:
+      - 8888:80
+    volumes:
+    - ./conf_balanceador:/etc/nginx/conf.d
+    - ./logs_balanceador:/var/log/nginx
+    networks:
+      web_net:
+        ipv4_address: 172.52.0.10
+    links:
+      - web1
+      - web2
+  web1:
+    image: nginx:latest
+    restart: always
+    volumes:
+    - ./conf1:/etc/nginx/conf.d
+    - ./html1:/html
+    - ./logs1:/var/log/nginx
+    networks:
+      web_net:
+        ipv4_address: 172.52.0.11
+  web2:
+    image: nginx:latest
+    restart: always
+    volumes:
+    - ./conf2:/etc/nginx/conf.d
+    - ./html2:/html
+    - ./logs2:/var/log/nginx
+    networks:
+      web_net:
+        ipv4_address: 172.52.0.12
