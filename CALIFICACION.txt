@@ -1,6 +1,0 @@
-80% práctica
-20% parte teórica
-
-SIMULADOR entra al promedio de las notas complementarias y el puntaje más alto obtiene 1 punto adicional en la nota final del examen
-
-Se recibirá los commits hasta 8pm del 7/2/2022 hora ECUADOR
