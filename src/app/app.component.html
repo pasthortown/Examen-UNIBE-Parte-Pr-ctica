@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <h1>Generador de codigos para pollos</h1>
+    </div>
+    <div class="formu">
+        <div class="formucont">
+            <div class="formu1">
+                <h2>Ingrese la provincia</h2>
+                <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre">
+            </div>
+            <div class="formu2">
+                <h2>Ingrese el numero de ave</h2>
+                <input type="number" class="form-control"[(ngModel)]="n" name="n">
+            </div>
+        </div>
+        
+        <div class="boton">
+            <button (click)="resulta()">Crear Codigo</button>
+            <h2 class="col-12">Para visualizar el resultado mire la consola </h2>
+        </div>
+        <div class="row">
+            
+          </div>
+    </div>
+</div>
