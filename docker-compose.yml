@@ -1,0 +1,25 @@
+version: '3.7'
+
+networks:
+  ci_net:
+    ipam:
+      config:
+        - subnet: 172.90.0.0/24
+
+services:
+        
+  web-produccion:
+    image: nginx:latest
+    ports:
+    - "8888:80"
+    restart: always
+    volumes:
+    - ./public_html/produccion:/public_html
+    - ./conf_d/produccion:/etc/nginx/conf_d
+    - ./logs/produccion:/var/log/nginx/
+    networks:
+      ci_net:
+      
+        ipv4_address: 172.90.0.12
+    environment:
+      TZ: America/Bogota
