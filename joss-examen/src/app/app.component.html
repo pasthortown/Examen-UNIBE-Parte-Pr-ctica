@@ -1,0 +1,83 @@
+<h1 class="tema" >TIENDA DE ROPA</h1>
+<div class="container">
+    <h3 class="tema">Datos de Factura</h3>
+<table id="items">
+
+	<tbody>
+       
+         <tr>
+		  
+		      <th>Articulos</th>
+		      <th>Precio</th>
+		  </tr>
+		<tr class="item-row">
+			<td class="item-name">
+			<div class="delete-wpr">
+				Articulos 1 ..................
+			</div></td>
+
+			<td>
+        <input type="number" class="form-control" [(ngModel)]="numero1"></td>
+		</tr>
+		<tr class="item-row">
+			<td class="item-name">
+			<div class="delete-wpr">
+        Articulos 2   ..................
+			</div></td>
+
+			<td>			  <input type="number" class="form-control" [(ngModel)]="numero2"></td>
+      <div class="btn-group">
+        <button class="btn btn-dark" (click)="calcular('suma')">CALCULAR</button>
+      
+      </div>
+		</tr>
+    
+		<td colspan="2" class="blank"></td>
+		<td colspan="2" class="total-line">Subtotal</td>
+		<td class="total-value">
+      
+		<div id="subtotal">
+      <h5 class="col-12">{{ subtotal | number }}</h5>
+      <div class="col-12">
+        
+      </div>
+		</div>
+            </td>
+            <tr>
+              <td colspan="2" class="blank"></td>
+              <td colspan="2" class="total-line balance">Descuento</td>
+              <td class="total-value balance">
+              <div class="due">
+                <h5 class="col-12">{{ desc | number: '1.1-1' }}</h5>
+              </div></td>
+            </tr>
+		<tr>
+			<td colspan="2" class="blank"></td>
+			<td colspan="2" class="total-line">IVA 14%</td>
+
+			<td class="total-value">			
+        <h5 class="col-12">{{ iva14 | number: '1.1-1' }}</h5>
+            </td>
+		</tr>
+		<tr>
+			<td colspan="2" class="blank"></td>
+			<td colspan="2" class="total-line balance">Total</td>
+			<td class="total-value balance">
+			<div class="due">
+				<h5 class="col-12">{{ resultado | number }}</h5>
+			</div></td>
+		</tr>
+    <tr>
+
+			<td colspan="2" class="blank"></td>
+			<td colspan="2" class="total-line">Redondeo</td>
+			<td class="total-value">
+			<div id="total">
+        <h5 class="col-12">{{ resultado| number: '1.1-1'}}</h5>
+			</div>
+            </td>
+		</tr>
+
+	</tbody>
+</table>
+</div>
